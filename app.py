@@ -353,44 +353,64 @@ def apply_math_logic(data: Dict[str, Any], transcript: str) -> Dict[str, Any]:
     return data
 
   if intent == "COUNT":
-    target = logic.get("target_number")
-    try:
-      n = int(target)
-    except Exception:
-      logic["is_impossible"] = True
-      logic["sequence"] = []
-      data["screen"] = ""
+      target = logic.get("target_number")
+      try:
+          n = int(target)
+      except Exception:
+          # If LLM couldn't supply a numeric target, treat as impossible
+          logic["is_impossible"] = True
+          logic["sequence"] = []
+          data["screen"] = ""
+          data["_math_logic"] = logic
+          return data
+
+      if n <= 0:
+          logic["is_impossible"] = True
+          logic["sequence"] = []
+          data["screen"] = ""
+          data["_math_logic"] = logic
+          return data
+
+      step_size, seq, is_impossible = build_count_sequence(n)
+      logic["step_size"] = step_size
+      logic["sequence"] = seq
+      logic["is_impossible"] = is_impossible
+      logic["target_number"] = n
+
+      # Time estimate for counting by ones
+      seconds, time_text = estimate_count_time(n)
+      logic["time_estimate_seconds"] = seconds
+      logic["time_estimate_text"] = time_text
+
+      # Build screen string: for small n, just show 1..n; for big, the jumps
+      if n <= 10:
+          screen = ", ".join(str(x) for x in seq)
+          digits_for_voice = [str(x) for x in seq]
+      else:
+          screen = ", ".join(f"{x:,}" for x in seq)
+          digits_for_voice = [f"{x:,}" for x in seq]
+
+      data["screen"] = screen
+
+      # Build spoken text that matches the same jumps.
+      unit = logic.get("unit")
+      target_digits = f"{n:,}"
+
+      if unit:
+          # crude pluralization: "popsicle" -> "popsicles" when number != 1
+          plural_unit = unit if n == 1 else unit + "s"
+          intro = f"Let's jump up to {target_digits} {plural_unit}."
+      else:
+          intro = f"Let's jump up to {target_digits}."
+
+      jumps_phrase = ", ".join(digits_for_voice)
+      # e.g. "Our ten jumps are: 100,000, 200,000, ...".
+      jumps_line = f" Our ten jumps are: {jumps_phrase}."
+      time_line = f" If you counted by ones, it would take {time_text}."
+
+      data["text"] = intro + jumps_line + time_line
       data["_math_logic"] = logic
       return data
-
-    if n <= 0:
-      logic["is_impossible"] = True
-      logic["sequence"] = []
-      data["screen"] = ""
-      data["_math_logic"] = logic
-      return data
-
-    step_size, seq, is_impossible = build_count_sequence(n)
-    logic["step_size"] = step_size
-    logic["sequence"] = seq
-    logic["is_impossible"] = is_impossible
-    logic["target_number"] = n
-
-    seconds, time_text = estimate_count_time(n)
-    logic["time_estimate_seconds"] = seconds
-    logic["time_estimate_text"] = time_text
-
-    if n <= 10:
-      screen = ", ".join(str(x) for x in seq)
-    else:
-      screen = ", ".join(f"{x:,}" for x in seq)
-
-    data["screen"] = screen
-    data["_math_logic"] = logic
-    return data
-
-  data["_math_logic"] = logic
-  return data
 
 
 # ---------------------------------------------------------
