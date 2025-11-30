@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy app code and static files
 COPY app.py index.html prompt.txt knowledge.json ./
+COPY static ./static
 
 # Expose the FastAPI port
 EXPOSE 8000

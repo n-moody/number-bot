@@ -36,6 +36,11 @@ Whenever you change something:
    Build **linux/amd64** image and push:
 
    ```bash
+
+    docker build -t ghcr.io/n-moody/number-bot:latest .
+    docker push ghcr.io/n-moody/number-bot:latest
+
+
    docker buildx build \
      --platform linux/amd64 \
      -t ghcr.io/n-moody/number-bot:latest \
