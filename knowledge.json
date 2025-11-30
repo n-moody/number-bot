@@ -1,0 +1,149 @@
+{
+  "config": {
+    "voice": "nova"
+  },
+  "reference_data": {
+    "phonetic_repairs": {
+      "sex tillion": "sextillion",
+      "time to a": "Count to a",
+      "go to a": "Count to a",
+      "show me a": "Count to a",
+      "a brazilian": "A Billion",
+      "gorilla": "Googol",
+      "google": "Googol",
+      "one hand click": "IGNORE_INPUT",
+      "slash": "IGNORE_INPUT",
+      "subtitle": "IGNORE_INPUT",
+      "caption": "IGNORE_INPUT"
+    },
+    "magnitudes": {
+      "Million": {
+        "zeros": 6,
+        "example": "1,000,000",
+        "time_to_count": "About 12 days if you count one number every second, without stopping."
+      },
+      "Billion": {
+        "zeros": 9,
+        "example": "1,000,000,000",
+        "time_to_count": "About 32 years if you count one number every second, without stopping."
+      },
+      "Trillion": {
+        "zeros": 12,
+        "example": "1,000,000,000,000",
+        "time_to_count": "About 32 thousand years if you count one number every second, without stopping."
+      },
+      "Quadrillion": {
+        "zeros": 15,
+        "example": "1,000,000,000,000,000",
+        "time_to_count": "About 32 million years if you count one number every second, without stopping."
+      },
+      "Quintillion": {
+        "zeros": 18,
+        "example": "1,000,000,000,000,000,000",
+        "time_to_count": "About 32 billion years if you count one number every second, longer than the age of the universe."
+      },
+      "Sextillion": {
+        "zeros": 21,
+        "example": "1,000,000,000,000,000,000,000",
+        "time_to_count": "About 32 trillion years if you count one number every second, much, much longer than the age of the universe."
+      },
+      "Septillion": {
+        "zeros": 24,
+        "example": "1 followed by 24 zeros",
+        "time_to_count": "So long that it is far beyond any real time in our universe."
+      },
+      "Octillion": {
+        "zeros": 27,
+        "example": "1 followed by 27 zeros",
+        "time_to_count": "So long that it is far beyond any real time in our universe."
+      },
+      "Nonillion": {
+        "zeros": 30,
+        "example": "1 followed by 30 zeros",
+        "time_to_count": "So long that it is far beyond any real time in our universe."
+      },
+      "Decillion": {
+        "zeros": 33,
+        "example": "1 followed by 33 zeros",
+        "time_to_count": "So long that it is far beyond any real time in our universe."
+      },
+      "Undecillion": {
+        "zeros": 36,
+        "example": "1 followed by 36 zeros",
+        "time_to_count": "Unimaginably long, much longer than the age of the universe."
+      },
+      "Duodecillion": {
+        "zeros": 39,
+        "example": "1 followed by 39 zeros",
+        "time_to_count": "Unimaginably long, much longer than the age of the universe."
+      },
+      "Tredecillion": {
+        "zeros": 42,
+        "example": "1 followed by 42 zeros",
+        "time_to_count": "Unimaginably long, much longer than the age of the universe."
+      },
+      "Quattuordecillion": {
+        "zeros": 45,
+        "example": "1 followed by 45 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Quindecillion": {
+        "zeros": 48,
+        "example": "1 followed by 48 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Sexdecillion": {
+        "zeros": 51,
+        "example": "1 followed by 51 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Septendecillion": {
+        "zeros": 54,
+        "example": "1 followed by 54 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Octodecillion": {
+        "zeros": 57,
+        "example": "1 followed by 57 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Novemdecillion": {
+        "zeros": 60,
+        "example": "1 followed by 60 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Vigintillion": {
+        "zeros": 63,
+        "example": "1 followed by 63 zeros",
+        "time_to_count": "Unimaginably long, far beyond any real time in the universe."
+      },
+      "Centillion": {
+        "zeros": 303,
+        "example": "1 followed by 303 zeros",
+        "time_to_count": "So huge that even trying to count that high is beyond anything we can really imagine."
+      },
+      "Googol": {
+        "zeros": 100,
+        "example": "1 followed by 100 zeros",
+        "time_to_count": "Impossible in practice. The universe would be gone long before you finished counting one number every second."
+      },
+      "Googolplex": {
+        "zeros": "Googol",
+        "example": "1 followed by a Googol of zeros",
+        "time_to_count": "Beyond impossible. The universe is too small to even write this number down, let alone count to it."
+      },
+      "Infinity": {
+        "zeros": "Endless",
+        "example": "∞",
+        "time_to_count": "Never ends. You could count forever and still never be done."
+      }
+    },
+    "definitions": {
+      "Plus (+ or Add)": "Putting two piles of numbers together to make a bigger pile.",
+      "Minus (- or Subtract)": "Taking some numbers away from the pile.",
+      "Times (x or Multiply)": "Adding the same number over and over again really fast.",
+      "Divide (÷)": "Sharing a number into equal groups."
+    }
+  }
+}
+

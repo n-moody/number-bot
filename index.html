@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Number Bot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+  </head>
+  
+<body>
+  <div id="topBar">
+    <div id="appTitle">Number Bot</div>
+    <button id="dadToggle" class="dad-toggle">Dad mode: Off</button>
+  </div>
+
+  <div id="chatContainer"></div>
+
+  <div id="sizeMeter">
+    <div class="size-label">How big is this number?</div>
+    <div class="size-bar">
+      <div id="sizeMarker" class="size-marker"></div>
+    </div>
+    <div class="size-scale">
+      <span>Small</span>
+      <span>Big</span>
+      <span>Mind-blowing</span>
+    </div>
+  </div>
+
+  <div id="quickRow">
+    <span class="quick-label">Try saying:</span>
+    <button class="quick-chip" data-example="Count to ten.">Count to 10</button>
+    <button class="quick-chip" data-example="Count to one hundred.">Count to 100</button>
+    <button class="quick-chip" data-example="Count to one thousand.">
+      Count to 1,000
+    </button>
+    <button class="quick-chip" data-example="What is five plus seven?">
+      5 + 7
+    </button>
+  </div>
+
+  <pre id="debugPanel" class="dad-only"></pre>
+
+  <div id="controls">
+    <div id="controls-inner">
+      <div id="silenceBar"></div>
+      <button id="stopBtn">⏹</button>
+      <button id="recordBtn">🎤</button>
+      <button id="numberBtn">123</button>
+    </div>
+    <div id="status">Ready</div>
+    <div id="devStats" class="dad-only">Brain: 0ms | Voice: 0ms | Total: 0ms</div>
+  </div>
+
+  <!-- NUMBER PAD OVERLAY -->
+  <div id="numberPadOverlay">
+    <div id="numberPad">
+      <div id="numberPadHeader">
+        <span>Type a number and I'll say it.</span>
+        <button id="padClose" class="pad-close">✕</button>
+      </div>
+      <div id="numberDisplay"></div>
+      <div class="pad-grid">
+        <button class="pad-btn" data-digit="1">1</button>
+        <button class="pad-btn" data-digit="2">2</button>
+        <button class="pad-btn" data-digit="3">3</button>
+        <button class="pad-btn" data-digit="4">4</button>
+        <button class="pad-btn" data-digit="5">5</button>
+        <button class="pad-btn" data-digit="6">6</button>
+        <button class="pad-btn" data-digit="7">7</button>
+        <button class="pad-btn" data-digit="8">8</button>
+        <button class="pad-btn" data-digit="9">9</button>
+        <button class="pad-btn clear" data-action="clear">Clear</button>
+        <button class="pad-btn" data-digit="0">0</button>
+        <button class="pad-btn action" data-action="speak">Speak</button>
+      </div>
+      <div id="padHint">Up to 21 digits is fine. I'll say the number out loud.</div>
+    </div>
+  </div>
+
+  <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
